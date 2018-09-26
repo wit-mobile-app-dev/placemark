@@ -30,6 +30,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
       placemark = intent.extras.getParcelable<PlacemarkModel>("placemark_edit")
       placemarkTitle.setText(placemark.title)
       description.setText(placemark.description)
+      btnAdd.setText()
     }
 
     btnAdd.setOnClickListener() {
@@ -41,7 +42,7 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
         setResult(AppCompatActivity.RESULT_OK)
         finish()
       } else {
-        toast("Please Enter a title")
+        toast(R.string.enter_placemark_title)
       }
     }
   }
