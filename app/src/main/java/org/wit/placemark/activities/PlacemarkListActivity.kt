@@ -41,6 +41,6 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
   }
 
   override fun onPlacemarkClick(placemark: PlacemarkModel) {
-    startActivityForResult(intentFor<PlacemarkActivity>(), AppCompatActivity.RESULT_OK)
+    startActivityForResult(intentFor<PlacemarkActivity>().putExtra("placemark_edit", placemark), AppCompatActivity.RESULT_OK)
   }
 }
