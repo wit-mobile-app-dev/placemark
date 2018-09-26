@@ -44,4 +44,9 @@ class PlacemarkListActivity : AppCompatActivity(), PlacemarkListener {
   override fun onPlacemarkClick(placemark: PlacemarkModel) {
     startActivityForResult(intentFor<PlacemarkActivity>().putExtra("placemark_edit", placemark), 0)
   }
+
+  override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    recyclerView.adapter?.notifyDataSetChanged()
+    super.onActivityResult(requestCode, resultCode, data)
+  }
 }
