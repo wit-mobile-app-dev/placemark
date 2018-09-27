@@ -15,6 +15,7 @@ import org.wit.placemark.helpers.readImage
 import org.wit.placemark.helpers.readImageFromPath
 import org.wit.placemark.helpers.showImagePicker
 import org.wit.placemark.main.MainApp
+import org.wit.placemark.models.Location
 import org.wit.placemark.models.PlacemarkModel
 
 class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
@@ -67,7 +68,8 @@ class PlacemarkActivity : AppCompatActivity(), AnkoLogger {
     }
 
     placemarkLocation.setOnClickListener {
-      startActivity (intentFor<MapsActivity>())
+      val location = Location(52.245696, -7.139102, 15f)
+      startActivity (intentFor<MapsActivity>().putExtra("location", location))
     }
   }
 
